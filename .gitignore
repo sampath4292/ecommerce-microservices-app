@@ -1,0 +1,21 @@
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Maven (Just in case the subfolders miss them)
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Node.js (Getting ready for your frontend!)
+node_modules/
+dist/
+build/
+.env
+
+# OS Files
+.DS_Store
+Thumbs.db
