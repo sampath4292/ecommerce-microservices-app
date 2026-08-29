@@ -26,7 +26,7 @@ public class PaymentService {
     public void processPayment(String eventMessage) {
         try {
             // 1. Parse the Kafka Event
-            OrderCreatedEvent event = objectMapper.readValue(eventMessage, OrderCreatedEvent.class);
+            OrderCreatedEvent event = objectMapper.readValue(eventMessage, OrderCreatedEvent.class);// Deserialize JSON to OrderCreatedEvent
             System.out.println("------------- PAYMENT INITIATED -------------");
             System.out.println("Processing payment for Order ID: " + event.getOrderId());
 
