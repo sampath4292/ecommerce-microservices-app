@@ -13,7 +13,6 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
-
     @PostMapping
     public ResponseEntity<String> placeOrder(@RequestBody OrderRequest orderRequest) {
         // Pass the incoming JSON payload to our business logic
