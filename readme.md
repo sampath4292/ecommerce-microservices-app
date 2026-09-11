@@ -1,11 +1,5 @@
 # 🛒 Event-Driven E-Commerce Microservices
 
-> A production-style e-commerce backend demonstrating **Microservices Architecture, Event-Driven Communication, Apache Kafka, ActiveMQ, PostgreSQL, and the Saga Pattern**.
-
-This project is designed to demonstrate how a traditional e-commerce application can be decomposed into independently deployable services while maintaining consistency across distributed transactions.
-
----
-
 ## 📌 Overview
 
 The system is built using an **event-driven microservices architecture** where each business capability is isolated into its own service and maintains its own database.
@@ -15,7 +9,7 @@ Instead of tightly coupling services through synchronous REST calls, the system 
 - **Apache Kafka** for business events and distributed communication
 - **ActiveMQ** for reliable point-to-point notification tasks
 - **PostgreSQL** for service-specific data persistence
-- **Saga Pattern** for handling distributed transactions and compensating actions
+- **Saga Pattern** for handling distributed transactions and compensating actions // will be implemented
 - **Docker Compose** for local infrastructure
 
 ### High-Level Flow
@@ -58,23 +52,23 @@ Instead of tightly coupling services through synchronous REST calls, the system 
 
 A typical checkout follows this flow:
 
-Customer
-   │
-   ▼
-API Gateway
-   │
-   ▼
-Order Service
-   │
-   │ Create Order
-   │
-   ▼
-PostgreSQL
-   │
-   │ Publish OrderCreatedEvent
-   ▼
-Apache Kafka
-   │
+            Customer
+               │
+               ▼
+            API Gateway
+               │
+               ▼
+            Order Service
+               │
+               │ Create Order
+               │
+               ▼
+            PostgreSQL
+               │
+               │ Publish OrderCreatedEvent
+               ▼
+            Apache Kafka
+               │
    ├──────────────────────┐
    │                      │
    ▼                      ▼
